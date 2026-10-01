@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Coordinación de Promoción y Desarrollo Científico y Tecnológico. Información geográfica, científica y tecnológica de la Provincia de Salta."
+    >
+
+    <meta
+        name="author"
+        content="Gobierno de Salta"
+    >
+
+    <title>
+        Ciencia y Tecnología | Gobierno de Salta
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        href="assets/logo.svg"
+        type="image/png"
+    >
+
+
+    <!-- =====================================================
+         FUENTE
+         ===================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ESTILOS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="Inicio"
+        >
+
+            <div class="brand-logo">
+
+                <img
+                    src="assets/logo.png"
+                    alt="Gobierno de Salta"
+                >
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <span class="brand-government">
+                    GOBIERNO DE SALTA
+                </span>
+
+                <span class="brand-department">
+                    Coordinación de Promoción y Desarrollo
+                    Científico y Tecnológico
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a
+                href="#visores"
+                class="nav-link"
+            >
+                Visores
+            </a>
+
+            <a
+                href="#institucional"
+                class="nav-link"
+            >
+                Institucional
+            </a>
+
+            <a
+                href="#datos"
+                class="nav-link"
+            >
+                Datos
+            </a>
+
+            <a
+                href="https://www.facebook.com/cienciatecsalta/?locale=es_LA"
+                class="nav-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Noticias
+            </a>
+
+        </nav>
+
+
+        <button
+            id="menu-toggle"
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero">
+
+
+    <div class="hero-background"></div>
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-label">
+            CIENCIA · TECNOLOGÍA 
+        </div>
+
+
+        <h1>
+            Coordinacion de 
+            <br>
+           Ciencia y tecnología de Salta
+        </h1>
+
+
+        <p>
+            Observación de la Tierra y herramientas para el análisis
+            científico y tecnológico de la Provincia.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="#visores"
+                class="button button-primary"
+            >
+                Explorar visores
+                <span>→</span>
+            </a>
+
+
+            <a
+                href="#institucional"
+                class="button button-secondary"
+            >
+                Conocer la Coordinación
+            </a>
+
+        </div>
+
+
+        <!-- <div class="hero-indicators">
+
+            <div class="indicator">
+
+                <strong>
+                    GIS
+                </strong>
+
+                <span>
+                    Información geográfica
+                </span>
+
+            </div>
+
+
+            <div class="indicator">
+
+                <strong>
+                    EO
+                </strong>
+
+                <span>
+                    Observación de la Tierra
+                </span>
+
+            </div>
+
+
+            <div class="indicator">
+
+                <strong>
+                    DATA
+                </strong>
+
+                <span>
+                    Datos y conocimiento
+                </span>
+
+            </div>
+
+        </div> -->
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VISOR SECTION
+     ========================================================= -->
+
+<main>
+
+
+<section
+    id="visores"
+    class="section section-visores"
+>
+
+
+    <div class="section-header">
+
+        <div>
+
+            <span class="section-kicker">
+                PLATAFORMA DE OBSERVACION DE LA TIERRA
+            </span>
+
+            <h2>
+                Visores temáticos
+            </h2>
+
+        </div>
+
+
+        <p>
+            Accedé a herramientas cartográficas para explorar
+            información territorial, ambiental, hidrológica,
+            satelital y científica.
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FILTROS
+         ===================================================== -->
+<!-- 
+    <div
+        id="visor-filters"
+        class="visor-filters"
+    >
+
+        <button
+            class="filter-button active"
+            data-filter="todos"
+            type="button"
+        >
+            Todos
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-filter="ambiente"
+            type="button"
+        >
+            Ambiente
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-filter="territorio"
+            type="button"
+        >
+            Territorio
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-filter="hidrologia"
+            type="button"
+        >
+            Recursos hídricos
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-filter="satelital"
+            type="button"
+        >
+            Observación de la Tierra
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-filter="ciencia"
+            type="button"
+        >
+            Ciencia y tecnología
+        </button>
+
+    </div>
+ -->
+
+
+    <!-- =====================================================
+         CARDS
+         ===================================================== -->
+
+    <div
+        id="visor-grid"
+        class="visor-grid"
+    >
+
+
+        <!-- =================================================
+             AMBIENTAL
+             ================================================= -->
+
+        <article
+            class="visor-card"
+            data-category="ambiente"
+        >
+
+            <a
+                href="visores/ambiental/index.html"
+                class="visor-card-link"
+                aria-label="Abrir Visor Ambiental"
+            >
+
+                <div class="visor-image">
+
+                    <img
+                        src="assets/images4.jpg"
+                        alt="Visor Ambiental"
+                        loading="lazy"
+                    >
+
+                    <span class="card-tag">
+                        AMBIENTE
+                    </span>
+
+                </div>
+
+
+                <div class="visor-card-content">
+
+                    <h3>
+                        Visor Ambiental
+                    </h3>
+
+                    <p>
+                        Información geográfica vinculada al
+                        ambiente, recursos naturales y
+                        características ambientales del territorio.
+                    </p>
+
+                    <span class="card-action">
+                        Explorar visor
+                        <span>→</span>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =================================================
+             HIDROLOGÍA
+             ================================================= -->
+
+        <article
+            class="visor-card"
+            data-category="hidrologia"
+        >
+
+            <a
+                href="visores/hidrologia/index.html"
+                class="visor-card-link"
+                aria-label="Abrir Visor Hidrológico"
+            >
+
+                <div class="visor-image">
+
+                    <img
+                        src="assets/images (6).jpg"
+                        alt="Visor Hidrológico"
+                        loading="lazy"
+                    >
+
+                    <span class="card-tag">
+                        HIDROLOGÍA
+                    </span>
+
+                </div>
+
+
+                <div class="visor-card-content">
+
+                    <h3>
+                        Visor Hidrológico
+                    </h3>
+
+                    <p>
+                        Información relacionada con cuencas,
+                        cursos de agua, recursos hídricos y
+                        análisis hidrológico.
+                    </p>
+
+                    <span class="card-action">
+                        Explorar visor
+                        <span>→</span>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =================================================
+             TERRITORIAL
+             ================================================= -->
+
+        <article
+            class="visor-card"
+            data-category="territorio"
+        >
+
+            <a
+                href="visores/territorial/index.html"
+                class="visor-card-link"
+                aria-label="Abrir Visor Territorial"
+            >
+
+                <div class="visor-image">
+
+                    <img
+                        src="assets/images (3).jpg"
+                        alt="Visor Territorial"
+                        loading="lazy"
+                    >
+
+                    <span class="card-tag">
+                        TERRITORIO
+                    </span>
+
+                </div>
+
+
+                <div class="visor-card-content">
+
+                    <h3>
+                        Visor Territorial
+                    </h3>
+
+                    <p>
+                        Información territorial, urbana,
+                        infraestructura y componentes espaciales
+                        de la Provincia de Salta.
+                    </p>
+
+                    <span class="card-action">
+                        Explorar visor
+                        <span>→</span>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SATELITAL
+             ================================================= -->
+
+        <article
+            class="visor-card"
+            data-category="satelital"
+        >
+
+            <a
+                href="visores/satelital/index.html"
+                class="visor-card-link"
+                aria-label="Abrir Visor de Observación de la Tierra"
+            >
+
+                <div class="visor-image">
+
+                    <img
+                        src="assets/images (2).jpg"
+                        alt="Observación de la Tierra"
+                        loading="lazy"
+                    >
+
+                    <span class="card-tag">
+                        OBSERVACIÓN DE LA TIERRA
+                    </span>
+
+                </div>
+
+
+                <div class="visor-card-content">
+
+                    <h3>
+                        Observación de la Tierra
+                    </h3>
+
+                    <p>
+                        Imágenes satelitales, índices espectrales,
+                        productos derivados y análisis de cambios
+                        sobre el territorio.
+                    </p>
+
+                    <span class="card-action">
+                        Explorar visor
+                        <span>→</span>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =================================================
+             CIENCIA
+             ================================================= -->
+
+        <!-- <article
+            class="visor-card"
+            data-category="ciencia"
+        >
+
+            <a
+                href="visores/ciencia/index.html"
+                class="visor-card-link"
+                aria-label="Abrir Información Científica"
+            >
+
+                <div class="visor-image">
+
+                    <img
+                        src="assets/visor-ciencia.jpg"
+                        alt="Información Científica"
+                        loading="lazy"
+                    >
+
+                    <span class="card-tag">
+                        CIENCIA
+                    </span>
+
+                </div>
+
+
+                <div class="visor-card-content">
+
+                    <h3>
+                        Información Científica
+                    </h3>
+
+                    <p>
+                        Recursos, proyectos, información científica
+                        y herramientas para apoyar el conocimiento
+                        del territorio.
+                    </p>
+
+                    <span class="card-action">
+                        Explorar visor
+                        <span>→</span>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </article> -->
+
+
+
+        <!-- =================================================
+             PROYECTOS
+             ================================================= -->
+ <!--
+        <article
+            class="visor-card"
+            data-category="ciencia"
+        >
+
+            <a
+                href="visores/proyectos/index.html"
+                class="visor-card-link"
+                aria-label="Abrir Proyectos y desarrollos"
+            >
+
+                <div class="visor-image">
+
+                    <img
+                        src="assets/visor-proyectos.jpg"
+                        alt="Proyectos y desarrollos"
+                        loading="lazy"
+                    >
+
+                    <span class="card-tag">
+                        DESARROLLO
+                    </span>
+
+                </div>
+
+
+                <div class="visor-card-content">
+
+                    <h3>
+                        Proyectos y desarrollos
+                    </h3>
+
+                    <p>
+                        Aplicaciones, proyectos tecnológicos,
+                        desarrollos geoespaciales y herramientas
+                        de innovación.
+                    </p>
+
+                    <span class="card-action">
+                        Explorar
+                        <span>→</span>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </article> -->
+
+
+    </div>
+
+
+</section>
+
+<hr>
+
+<!-- =========================================================
+     INSTITUCIONAL
+
+     
+     ========================================================= -->
+
+<section
+    id="institucional"
+    class="section institutional-section"
+    
+>
+
+
+    <div class="institutional-grid">
+
+
+        <div class="institutional-text">
+
+            <span class="section-kicker">
+                INSTITUCIONAL
+            </span>
+
+
+            <h2>
+                Ciencia y tecnología
+                aplicada al territorio
+            </h2>
+
+
+            <p>
+                La Coordinación de Promoción y Desarrollo
+                Científico y Tecnológico impulsa iniciativas
+                orientadas a fortalecer el conocimiento,
+                la innovación y el uso de herramientas
+                tecnológicas para el desarrollo provincial.
+            </p>
+
+
+            <p>
+                La información geográfica y los datos
+                constituyen herramientas fundamentales para
+                comprender los procesos territoriales,
+                ambientales y socioeconómicos de la Provincia.
+            </p>
+
+
+            <a
+                href="https://www.facebook.com/cienciatecsalta/?locale=es_LA"
+                class="text-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Conocer novedades y actividades
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="institutional-panel">
+
+            <div class="institutional-panel-line"></div>
+
+
+            <div class="institutional-item">
+
+                <strong>
+                    INFORMACIÓN
+                </strong>
+
+                <span>
+                    Producción y sistematización de
+                    información científica y territorial.
+                </span>
+
+            </div>
+
+
+            <div class="institutional-item">
+
+                <strong>
+                    INNOVACIÓN
+                </strong>
+
+                <span>
+                    Desarrollo y aplicación de tecnologías
+                    para el conocimiento del territorio.
+                </span>
+
+            </div>
+
+
+            <div class="institutional-item">
+
+                <strong>
+                    COOPERACIÓN
+                </strong>
+
+                <span>
+                    Articulación con organismos,
+                    instituciones y actores científicos.
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DATOS
+     ========================================================= -->
+
+<!-- <section
+    id="datos"
+    class="data-section"
+>
+
+
+    <div class="data-inner">
+
+
+        <div>
+
+            <span class="section-kicker">
+                INFORMACIÓN GEOGRÁFICA
+            </span>
+
+
+            <h2>
+                Datos para conocer
+                y analizar el territorio
+            </h2>
+
+
+            <p>
+                Los visores integran información espacial
+                proveniente de diferentes fuentes y productos
+                geográficos destinados a facilitar la consulta,
+                visualización y análisis territorial.
+            </p>
+
+        </div>
+
+
+        <div class="data-features">
+
+            <div>
+                <strong>
+                    GIS
+                </strong>
+
+                <span>
+                    Sistemas de información geográfica
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    WMS
+                </strong>
+
+                <span>
+                    Servicios cartográficos interoperables
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    EO
+                </strong>
+
+                <span>
+                    Observación de la Tierra
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    DATA
+                </strong>
+
+                <span>
+                    Información territorial
+                </span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+ -->
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <strong>
+                Gobierno de Salta
+            </strong>
+
+            <span>
+                Coordinación de Promoción y Desarrollo
+                Científico y Tecnológico
+            </span>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#visores">
+                Visores
+            </a>
+
+            <a href="#institucional">
+                Institucional
+            </a>
+
+            <a href="#datos">
+                Datos
+            </a>
+
+            <a
+                href="https://www.facebook.com/cienciatecsalta/?locale=es_LA"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Facebook
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            Información geográfica y tecnológica
+        </span>
+
+        <span>
+            Gobierno de Salta
+        </span>
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script src="js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Visor Ambiental | Gobierno de Salta
+    </title>
+
+
+    <!-- =====================================================
+         LEAFLET
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+
+    <!-- =====================================================
+         ESTILOS DEL VISOR
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/visor.css"
+    >
+
+
+    <style>
+
+        .leaflet-control-layers {
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="visor-app">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="visor-header">
+
+
+        <div class="visor-brand">
+
+
+            <div class="visor-logo">
+
+                <!--
+                Reemplazar posteriormente por el logo
+                institucional oficial.
+                -->
+
+                <img
+                    src="../../assets/logo.png"
+                    alt="Gobierno de Salta"
+                >
+
+            </div>
+
+
+            <div class="visor-title-container">
+
+                <p class="visor-institution">
+                    Coordinación de Promoción y Desarrollo
+                    Científico y Tecnológico
+                </p>
+
+
+                <h1
+                    id="visor-title"
+                    class="visor-title"
+                >
+                    Visor Ambiental
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="visor-header-actions">
+
+
+            <button
+                id="sidebar-toggle"
+                class="header-button"
+                title="Mostrar u ocultar panel"
+                aria-label="Mostrar u ocultar panel"
+            >
+                ☰
+            </button>
+
+
+            <button
+                id="fullscreen-button"
+                class="header-button"
+                title="Pantalla completa"
+                aria-label="Pantalla completa"
+            >
+                ⛶
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO
+         ===================================================== -->
+
+    <main class="visor-content">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            id="visor-sidebar"
+            class="visor-sidebar"
+        >
+
+
+            <div class="sidebar-header">
+
+                <h2 class="sidebar-title">
+                    Capas de información
+                </h2>
+
+
+                <p
+                    id="visor-description"
+                    class="sidebar-description"
+                >
+                    Información geográfica ambiental
+                    de la Provincia de Salta.
+                </p>
+
+            </div>
+
+
+            <!-- =============================================
+                 BUSCADOR
+                 ============================================= -->
+
+            <div class="search-container">
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        🔎
+                    </span>
+
+
+                    <input
+                        id="layer-search"
+                        type="text"
+                        placeholder="Buscar capa..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 CAPAS
+                 ============================================= -->
+
+            <div
+                id="layers-container"
+                class="layers-container"
+            ></div>
+
+
+            <!-- =============================================
+                 INFORMACIÓN
+                 ============================================= -->
+
+            <div class="info-panel">
+
+                <h3 class="info-title">
+                    Información
+                </h3>
+
+
+                <div class="info-content">
+
+                    Fuente cartográfica:
+                    GeoServer institucional.
+                    <br><br>
+
+                    Sistema de referencia:
+                    EPSG:4326.
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAPA
+             ================================================= -->
+
+        <section class="map-container">
+
+
+            <div id="map"></div>
+
+
+            <!-- =============================================
+                 HERRAMIENTAS
+                 ============================================= -->
+
+            <div class="map-tools">
+
+
+                <button
+                    id="home-button"
+                    class="map-tool"
+                    title="Vista inicial"
+                    aria-label="Vista inicial"
+                >
+                    ⌂
+                </button>
+
+
+                <button
+                    id="location-button"
+                    class="map-tool"
+                    title="Mi ubicación"
+                    aria-label="Mi ubicación"
+                >
+                    ◎
+                </button>
+
+
+                <button
+                    id="legend-button"
+                    class="map-tool"
+                    title="Leyenda"
+                    aria-label="Leyenda"
+                >
+                    ☷
+                </button>
+
+
+            </div>
+
+
+            <!-- =============================================
+                 LEYENDA
+                 ============================================= -->
+
+            <div
+                id="legend-panel"
+                class="legend-panel"
+            >
+
+                <div class="legend-header">
+                    Leyenda
+                </div>
+
+
+                <div
+                    id="legend-content"
+                    class="legend-content"
+                ></div>
+
+            </div>
+
+
+            <!-- =============================================
+                 COORDENADAS
+                 ============================================= -->
+
+            <div
+                id="coordinates"
+                class="coordinates-display"
+            >
+                Lat: -
+                |
+                Lon: -
+            </div>
+
+
+            <!-- =============================================
+                 PIE
+                 ============================================= -->
+
+            <div class="visor-footer">
+
+                Coordinación de Promoción y Desarrollo
+                Científico y Tecnológico
+
+            </div>
+
+
+            <!-- =============================================
+                 CARGANDO
+                 ============================================= -->
+
+            <div
+                id="loading-overlay"
+                class="loading-overlay visible"
+            >
+
+                <div class="loading-box">
+
+                    Cargando visor geográfico...
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     LEAFLET
+     ========================================================= -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+
+
+<!-- =========================================================
+     CONFIGURACIÓN DEL VISOR
+     ========================================================= -->
+
+<script>
+
+    window.VISOR_CONFIG = {
+
+        title:
+            "Visor Ambiental",
+
+        description:
+            "Información geográfica ambiental de la Provincia de Salta.",
+
+
+        layers: [
+
+            {
+                id:
+                    "catastros",
+
+                name:
+                    "Catastro parcelario",
+
+                geoserverLayer:
+                    "public:catastros_Abr24",
+
+                type:
+                    "WMS",
+
+                group:
+                    "Información territorial",
+
+                visible:
+                    false,
+
+                opacity:
+                    0.75,
+
+                source:
+                    "GeoServer institucional"
+            },
+              {
+                id:
+                    "catastros",
+
+                name:
+                    "Zonificación de Usos del Suelo",
+
+                geoserverLayer:
+                    "public:Zonificacion_CPUA2025_CGO_15102025",
+
+                type:
+                    "WMS",
+
+                group:
+                    "Información territorial",
+
+                visible:
+                    false,
+
+                opacity:
+                    0.75,
+
+                source:
+                    "GeoServer institucional"
+            }
+
+        ]
+
+    };
+
+</script>
+
+
+
+<!-- =========================================================
+     MOTOR DEL VISOR
+     ========================================================= -->
+
+<script
+    src="../../js/visor.js"
+></script>
+
+
+</body>
+
+</html>
